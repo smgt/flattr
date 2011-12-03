@@ -2,16 +2,19 @@ require 'flattr/config'
 require 'flattr/connection'
 require 'flattr/request'
 require 'flattr/user'
+require 'flattr/thing'
 require 'flattr/version'
 
 module Flattr
   class Client
     require 'flattr/client/users'
+    require 'flattr/client/things'
 
     include Flattr::Connection
     include Flattr::Request
 
     include Flattr::Client::Users
+    include Flattr::Client::Things
 
     attr_accessor *Config::VALID_OPTIONS_KEYS
 
