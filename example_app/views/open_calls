@@ -1,0 +1,3 @@
+%p i got a lot of stuff, like
+%pre
+  =@user.inspect
