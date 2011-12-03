@@ -1,8 +1,12 @@
 require 'sinatra'
-$LOAD_PATH << "../lib"
-require 'flattr'
+$:.unshift File.expand_path('../../lib', __FILE__)
+#require 'flattr'
+require 'haml'
 
 
 get '/' do
-  "hello world"
+  haml :index
+end
+
+get '/callback' do
 end
