@@ -1,6 +1,7 @@
 require 'faraday'
 require 'flattr/core_ext/hash'
 require 'flattr/response/parse_json'
+require 'flattr/request/oauth2'
 
 module Flattr
   module Connection
@@ -18,6 +19,7 @@ module Flattr
       Faraday.new(default_options.deep_merge(connection_options)) do |builder|
         builder.use Faraday::Request::Multipart
         builder.use Faraday::Request::UrlEncoded
+        builder.use Flattr::Request::OAuth2
         # builder.use Twitter::Request::Gateway, gateway if gateway
         # builder.use Twitter::Response::RaiseClientError
         builder.use Flattr::Response::ParseJson unless options[:raw]

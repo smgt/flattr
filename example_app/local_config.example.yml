@@ -1,2 +1,4 @@
-client_id: GqKAYw0cR0eBSIQIQDsQGm2cgJ0nVMls3VSRhJUZAZrix7QdB8U7lMasm0G8CRqw
-client_secret: D9dLIYA8NRhaPXdgWXd7AdqM4WKwD0T70WIyL9xoQEowrsCegGcGKsiEeT1IKKFA
+client_id: your client key
+client_secret: your client secret
+token_endpoint: https://flattr.com/oauth/token
+authorize_endpoint: https://flattr.com/oauth/authorize

@@ -13,7 +13,9 @@ before do
   puts " -- #{request.request_method.upcase} #{request.path_info} --"
   @flattr_client = Flattr.new(
     :client_id    => local_config['client_id'],
-    :cient_secret => local_config['client_secret']
+    :cient_secret => local_config['client_secret'],
+    :authorize_endpoint => local_config['authorize_endpoint'],
+    :token_endpoint => local_config['token_endpoint']
   )
 end
 get '/' do
@@ -22,7 +24,8 @@ end
 
 get '/callback' do
   puts "callback params: #{params.inspect}"
-  # @todo @flattr_client.get_access_token params["code"]
+  token = @flattr_client.get_access_token params["code"]
+  puts "token is : #{token}"
   redirect '/tests'
 end
 
