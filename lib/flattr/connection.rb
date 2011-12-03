@@ -1,4 +1,5 @@
 require 'faraday'
+require 'flattr/core_ext/hash'
 require 'flattr/response/parse_json'
 
 module Flattr
