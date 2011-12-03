@@ -1,8 +1,8 @@
 require 'flattr/config'
 require 'flattr/connection'
 require 'flattr/request'
-require 'flattr/configuration'
 require 'flattr/user'
+require 'flattr/version'
 
 module Flattr
   class Client
