@@ -3,6 +3,8 @@ require 'flattr/connection'
 require 'flattr/request'
 require 'flattr/user'
 require 'flattr/thing'
+require 'flattr/language'
+require 'flattr/category'
 require 'flattr/version'
 require 'flattr/oauth2'
 
@@ -10,6 +12,8 @@ module Flattr
   class Client
     require 'flattr/client/users'
     require 'flattr/client/things'
+    require 'flattr/client/languages'
+    require 'flattr/client/categories'
 
     include Flattr::Connection
     include Flattr::Request
@@ -18,6 +22,8 @@ module Flattr
 
     include Flattr::Client::Users
     include Flattr::Client::Things
+    include Flattr::Client::Languages
+    include Flattr::Client::Categories
 
     attr_accessor *Config::VALID_OPTIONS_KEYS
 
