@@ -18,10 +18,10 @@ module Flattr
 
     # The endpoint that will be used to connect if none is set
     #
-    DEFAULT_ENDPOINT           = 'https://api.flattr.local/rest/v2'
+    DEFAULT_ENDPOINT           = 'https://api.flattr.com'
 
-    AUTHORIZE_ENDPOINT = 'https://flattr.local/oauth/authorize'
-    TOKEN_ENDPOINT     = 'https://flattr.local/oauth/token'
+    DEFAULT_AUTHORIZE_ENDPOINT = 'https://flattr.com/oauth/authorize'
+    DEFAULT_TOKEN_ENDPOINT     = 'https://flattr.com/oauth/token'
 
     # The gateway server if none is set
     DEFAULT_GATEWAY = nil
@@ -42,6 +42,8 @@ module Flattr
       :client_id,
       :client_secret,
       :endpoint,
+      :authorize_endpoint,
+      :token_endpoint,
       :gateway,
       :access_token,
       :proxy,
@@ -75,6 +77,8 @@ module Flattr
       self.client_id          = DEFAULT_CLIENT_ID
       self.client_secret      = DEFAULT_CLIENT_SECRET
       self.endpoint           = DEFAULT_ENDPOINT
+      self.authorize_endpoint = DEFAULT_AUTHORIZE_ENDPOINT
+      self.token_endpoint     = DEFAULT_TOKEN_ENDPOINT
       self.gateway            = DEFAULT_GATEWAY
       self.access_token       = DEFAULT_ACCESS_TOKEN
       self.proxy              = DEFAULT_PROXY
