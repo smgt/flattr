@@ -4,14 +4,14 @@ require 'flattr'
 require 'haml'
 
 layout :default
-session :enable
+set :session, :enable
 
 before do
-  puts "request: #{request.method.upcase} #{request.path}"
+  puts " -- #{request.request_method.upcase} #{request.path_info} --"
   @flattr_client = Flattr.new
 end
 get '/' do
-  puts " this is cheap loggin"
+  puts " this is cheap logging"
   haml :index
 end
 
@@ -21,7 +21,7 @@ get '/callback' do
 end
 
 get '/open_calls' do
-  @user = @flattr.users('simon_g')
+  @user = @flattr_client.user('smgt')
   haml :open_calls
 end
 
