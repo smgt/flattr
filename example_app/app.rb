@@ -13,7 +13,7 @@ before do
   puts " -- #{request.request_method.upcase} #{request.path_info} --"
   @flattr_client = Flattr.new(
     :client_id    => local_config['client_id'],
-    :cient_secret => local_config['client_secret'],
+    :client_secret => local_config['client_secret'],
     :authorize_endpoint => local_config['authorize_endpoint'],
     :token_endpoint => local_config['token_endpoint']
   )
