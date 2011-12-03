@@ -3,20 +3,26 @@ $:.unshift File.expand_path('../../lib', __FILE__)
 require 'flattr'
 require 'haml'
 
+require 'yaml'
+local_config = YAML.load_file './local_config.yml'
+
 layout :default
 set :session, :enable
 
 before do
   puts " -- #{request.request_method.upcase} #{request.path_info} --"
-  @flattr_client = Flattr.new
+  @flattr_client = Flattr.new(
+    :client_id    => local_config['client_id'],
+    :cient_secret => local_config['client_secret']
+  )
 end
 get '/' do
-  puts " this is cheap logging"
   haml :index
 end
 
 get '/callback' do
-  puts "hejhopp i callback #{params.inspect}"
+  puts "callback params: #{params.inspect}"
+  # @todo @flattr_client.get_access_token params["code"]
   redirect '/tests'
 end
 

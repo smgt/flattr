@@ -4,6 +4,7 @@ require 'flattr/request'
 require 'flattr/user'
 require 'flattr/thing'
 require 'flattr/version'
+require 'flattr/oauth2'
 
 module Flattr
   class Client
@@ -12,6 +13,8 @@ module Flattr
 
     include Flattr::Connection
     include Flattr::Request
+
+    include Flattr::OAuth2
 
     include Flattr::Client::Users
     include Flattr::Client::Things

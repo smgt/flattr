@@ -11,14 +11,17 @@ module Flattr
     DEFAULT_CONNECTION_OPTIONS = {}
 
     # The client key if none is set
-    DEFAULT_CLIENT_KEY = nil
+    DEFAULT_CLIENT_ID = nil
 
     # The consumer secret if none is set
     DEFAULT_CLIENT_SECRET = nil
 
     # The endpoint that will be used to connect if none is set
     #
-    DEFAULT_ENDPOINT = 'https://api.flattr.com/rest/v2'
+    DEFAULT_ENDPOINT           = 'https://api.flattr.local/rest/v2'
+
+    AUTHORIZE_ENDPOINT = 'https://flattr.local/oauth/authorize'
+    TOKEN_ENDPOINT     = 'https://flattr.local/oauth/token'
 
     # The gateway server if none is set
     DEFAULT_GATEWAY = nil
@@ -36,7 +39,7 @@ module Flattr
     VALID_OPTIONS_KEYS = [
       :adapter,
       :connection_options,
-      :client_key,
+      :client_id,
       :client_secret,
       :endpoint,
       :gateway,
@@ -69,11 +72,11 @@ module Flattr
     def reset
       self.adapter            = DEFAULT_ADAPTER
       self.connection_options = DEFAULT_CONNECTION_OPTIONS
-      self.client_key       = DEFAULT_CLIENT_KEY
-      self.client_secret    = DEFAULT_CLIENT_SECRET
+      self.client_id          = DEFAULT_CLIENT_ID
+      self.client_secret      = DEFAULT_CLIENT_SECRET
       self.endpoint           = DEFAULT_ENDPOINT
       self.gateway            = DEFAULT_GATEWAY
-      self.access_token        = DEFAULT_ACCESS_TOKEN
+      self.access_token       = DEFAULT_ACCESS_TOKEN
       self.proxy              = DEFAULT_PROXY
       self.user_agent         = DEFAULT_USER_AGENT
       self
