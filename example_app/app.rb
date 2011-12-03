@@ -28,6 +28,8 @@ end
 
 get '/open_calls' do
   @user = @flattr_client.user('smgt')
+  @categories = @flattr_client.categories
+  @languages = @flattr_client.languages
   haml :open_calls
 end
 
