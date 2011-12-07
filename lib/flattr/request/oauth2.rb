@@ -3,7 +3,9 @@ module Flattr
     class FlattrOAuth2 < Faraday::Middleware
 
       def call(env)
-        env[:request_headers]['Authorization'] = authorization_header
+        if authorization_header
+          env[:request_headers]['Authorization'] = authorization_header
+        end
         @app.call(env)
       end
 
@@ -14,8 +16,10 @@ module Flattr
       def authorization_header
         if @options[:access_token]
           "Bearer #{@options[:access_token]}"
-        else
+        elsif @options[:client_id] && @options[:client_secret]
           "Basic #{base64_encode("#{@options[:client_id]}:#{@options[:client_secret]}")}"
+        else
+          nil
         end
       end
 
