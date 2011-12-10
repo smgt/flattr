@@ -7,9 +7,8 @@ Gem::Specification.new do |s|
   s.version     = Flattr::Version.to_s
   s.authors     = ["Simon Gate", "Joel Hansson"]
   s.email       = ["simon@smgt.me", "joel.hansson@gmail.com"]
-  s.homepage    = ""
-  s.summary     = %q{Write a gem summary}
-  s.description = %q{Write a gem description}
+  s.homepage    = "http://github.com/simon/flattr"
+  s.summary     = %q{Flattr API wrapper}
 
   s.rubyforge_project = "flattr"
 
