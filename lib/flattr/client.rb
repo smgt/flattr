@@ -29,7 +29,7 @@ module Flattr
 
     attr_accessor *Config::VALID_OPTIONS_KEYS
 
-     # Initializes a new API object
+    # Initializes a new API object
     #
     # @param attrs [Hash]
     # @return [Flattr::Client]
