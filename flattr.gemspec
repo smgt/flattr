@@ -21,8 +21,10 @@ Gem::Specification.new do |s|
   s.add_dependency 'faraday'
   s.add_dependency 'multi_json'
 
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  s.add_development_dependency "rake"
-  # s.add_runtime_dependency "rest-client"
+  s.add_development_dependency 'json'
+  s.add_development_dependency 'rake'
+  s.add_development_dependency 'rdiscount'
+  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'webmock'
 end
