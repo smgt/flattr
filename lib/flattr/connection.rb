@@ -20,7 +20,7 @@ module Flattr
         #builder.use Faraday::Request::Multipart
         builder.use Faraday::Request::JSON
         builder.use Faraday::Request::UrlEncoded
-        builder.use Flattr::Request::FlattrOAuth2, options
+        builder.use Flattr::Request::FlattrOAuth2, credentials if credentials?
         builder.use Flattr::Response::ParseJson unless options[:raw]
         builder.adapter(adapter)
       end

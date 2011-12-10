@@ -1,5 +1,6 @@
 module Flattr
   class Base
+
     attr_accessor :attrs
     alias :to_hash :attrs
 
@@ -14,6 +15,20 @@ module Flattr
         class_eval do
           define_method attribute do
             @attrs[attribute.to_s]
+          end
+        end
+      end
+    end
+
+    def self.lazy_attr_writer(*attrs)
+      attrs.each do |attribute|
+        class_eval do
+          define_method "#{attribute}=" do |a|
+            if @attrs[attribute.to_s] != a.to_s
+              @has_changed = true
+              @changes.push(attribute)
+            end
+            @attrs[attribute.to_s] = a.to_s
           end
         end
       end

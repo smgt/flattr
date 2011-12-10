@@ -1,8 +1,6 @@
 module Flattr
   module OAuth2
 
-    include Flattr::Config
-
     def authorize_path opts = {}
       opts = options.merge(opts)
       url_params = "response_type=code"
@@ -15,5 +13,6 @@ module Flattr
     def get_access_token code
       post(token_endpoint, {:code => code, :grant_type => 'authorization_code'}, options)
     end
+
   end
 end

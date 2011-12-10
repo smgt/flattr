@@ -27,7 +27,7 @@ module Flattr
     DEFAULT_GATEWAY = nil
 
     # The access token if none is set
-    DEFAULT_ACCESS_TOKEN= nil
+    DEFAULT_ACCESS_TOKEN = nil
 
     # The proxy server if none is set
     DEFAULT_PROXY = nil

@@ -31,7 +31,7 @@ module Flattr
     def request(method, path, params, options)
       response = connection(options).send(method) do |request|
         case method.to_sym
-        when :delete, :get
+        when :get, :delete
           request.url(path, params)
         when :post, :put, :patch
           request.path = path
