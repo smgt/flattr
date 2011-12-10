@@ -8,17 +8,17 @@ module Flattr
 
   # @return [Integer]
   def self.minor
-    0
+    2
   end
 
   # @return [Integer]
   def self.patch
-    1
+    0
   end
 
   # @return [String, NilClass]
   def self.pre
-    "beta"
+    nil
   end
 
   # @return [String]
