@@ -17,14 +17,11 @@ module Flattr
         :url => options.fetch(:endpoint, endpoint),
       }
       Faraday.new(default_options.deep_merge(connection_options)) do |builder|
-        builder.use Faraday::Request::Multipart
-        #builder.use Faraday::Request::JSON
+        #builder.use Faraday::Request::Multipart
+        builder.use Faraday::Request::JSON
         builder.use Faraday::Request::UrlEncoded
         builder.use Flattr::Request::FlattrOAuth2, options
-        # builder.use Twitter::Request::Gateway, gateway if gateway
-        # builder.use Twitter::Response::RaiseClientError
         builder.use Flattr::Response::ParseJson unless options[:raw]
-        # builder.use Twitter::Response::RaiseServerError
         builder.adapter(adapter)
       end
     end
