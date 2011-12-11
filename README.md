@@ -20,7 +20,7 @@ Installation is easy, just install the gem with.
 
 ## Usage
 
-To talk with all of Flattr API resources you need to [register a application](http://flattr.com/apps). This will give you a *client id* and a *client secret* whom you can exchange for a *access token*. The *access token* is then used to access the resources in the Flattr API that needs authentication. You can find more information about the API in [Flattr developer documents (http://developers.flattr.net/v2).
+To talk with all of Flattr API resources you need to [register a application](http://flattr.com/apps). This will give you a *client id* and a *client secret* whom you can exchange for a *access token*. The *access token* is then used to access the resources in the Flattr API that needs authentication. You can find more information about the API in [Flattr developer documents](http://developers.flattr.net/v2).
 
 ### Access public resources
 
@@ -31,7 +31,7 @@ There are several public available resources in the Flattr API where you don't n
 flattr = Flattr.new
 
 flattr.thing 423405
-=> #<Flattr::Thing:0x007fccbb4f1d40 @attrs={"type"=>"thing", "resource"=>"https://api.flattr.com/rest/v2/things/423405", "link"=>"https://flattr.com/thing/423405", "id"=>423405, "url"=>"http://blog.flattr.net/2011/10/api-v2-beta-out-whats-changed/", "language"=>"en_GB", "category"=>"text", "owner"=>{"type"=>"user", "resource"=>"https://api.flattr.com/rest/v2/users/flattr", "link"=>"https://flattr.com/profile/flattr", "username"=>"flattr"}, "hidden"=>false, "created_at"=>1319704532, "tags"=>["api"], "flattrs"=>9, "description"=>"We have been working hard to deliver a great experience for developers and tried to build a good foundation for easily add new features. The API will remain in beta for a while for us to kill quirks and refine some of the resources, this means there might be big changes without notice for ...", "title"=>"API v2 beta out – what’s changed?"}>
+# => #<Flattr::Thing:0x007fccbb4f1d40 @attrs={"type"=>"thing", "resource"=>"https://api.flattr.com/rest/v2/things/423405", "link"=>"https://flattr.com/thing/423405", "id"=>423405, "url"=>"http://blog.flattr.net/2011/10/api-v2-beta-out-whats-changed/", "language"=>"en_GB", "category"=>"text", "owner"=>{"type"=>"user", "resource"=>"https://api.flattr.com/rest/v2/users/flattr", "link"=>"https://flattr.com/profile/flattr", "username"=>"flattr"}, "hidden"=>false, "created_at"=>1319704532, "tags"=>["api"], "flattrs"=>9, "description"=>"We have been working hard to deliver a great experience for developers and tried to build a good foundation for easily add new features. The API will remain in beta for a while for us to kill quirks and refine some of the resources, this means there might be big changes without notice for ...", "title"=>"API v2 beta out – what’s changed?"}>
 ```
 
 ### Access protected resources
@@ -57,8 +57,8 @@ code = gets
 
 # Use the code and exchange it for a access_token
 flattr.get_access_token code
-things = flattr.user # This will get all your things
-puts things.inspect
+
+# You are now authorized! ;)
 
 ```
 
