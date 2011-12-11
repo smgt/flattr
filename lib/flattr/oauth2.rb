@@ -1,7 +1,7 @@
 module Flattr
   module OAuth2
 
-    def authorize_path(opts = {})
+    def authorize_url(opts = {})
 
       default_options = {
         :client_id => client_id,
@@ -25,7 +25,16 @@ module Flattr
     end
 
     def get_access_token(code)
-      post(token_endpoint, {:code => code, :grant_type => 'authorization_code'}, options)
+      response = post(token_endpoint, {
+        :code => code,
+        :grant_type => 'authorization_code'
+      },{
+        :headers => {
+          :authorization => "Basic #{base64_encode("#{client_id}:#{client_secret}")}"
+        }}
+      )
+      self.access_token = response['access_token']
+      access_token
     end
 
   end

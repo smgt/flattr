@@ -23,10 +23,6 @@ module Flattr
         end
       end
 
-      def base64_encode str
-        [str].pack("m9999").chomp
-      end
-
     end
   end
 end

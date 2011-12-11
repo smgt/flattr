@@ -47,5 +47,10 @@ module Flattr
       @current_user ||= Flattr::User.new(self.verify_credentials)
     end
 
+    def base64_encode str
+      [str].pack("m9999").chomp
+    end
+
+
   end
 end
