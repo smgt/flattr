@@ -1,6 +1,8 @@
-# Flattr API wrapper gem
+# Flattr API wrapper
 
 This gem is a wrapper around the Flattr API. With the gem you can search things, add new thing and much more. If you want information about updates follow [@simongate](http://twitter.com/simongate) on twitter.
+
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=smgt&url=https://github.com/simon/flattr&title=Flattr API gem&language=en_GB&tags=github&category=software)
 
 ## Build status
 
