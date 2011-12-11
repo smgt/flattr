@@ -1,6 +1,6 @@
 # Flattr API wrapper gem
 
-This gem is a wrapper around the Flattr API. With the gem you can search things, add new thing and much more.
+This gem is a wrapper around the Flattr API. With the gem you can search things, add new thing and much more. If you want information about updates follow [@simongate](http://twitter.com/simongate) on twitter.
 
 ## Build status
 
