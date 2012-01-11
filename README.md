@@ -24,6 +24,15 @@ Installation is easy, just install the gem with.
 
 To talk with all of Flattr API resources you need to [register a application](http://flattr.com/apps). This will give you a *client id* and a *client secret* whom you can exchange for a *access token*. The *access token* is then used to access the resources in the Flattr API that needs authentication. You can find more information about the API in [Flattr developer documents](http://developers.flattr.net/v2).
 
+### Resources
+
+You can find documentation about available resources in the code.
+
+* [things](https://github.com/simon/flattr/blob/master/lib/flattr/client/things.rb)
+* [users](https://github.com/simon/flattr/blob/master/lib/flattr/client/users.rb)
+* [categories](https://github.com/simon/flattr/blob/master/lib/flattr/client/categories.rb)
+* [languages](https://github.com/simon/flattr/blob/master/lib/flattr/client/languages.rb)
+
 ### Access public resources
 
 There are several public available resources in the Flattr API where you don't need to authenticate to access.

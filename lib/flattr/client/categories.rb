@@ -29,7 +29,7 @@ module Flattr
       #   f.category("software")
       #   # => Flattr::Category
       #
-      # Returns a Flattr::Category on success and nil on failur
+      # Returns a Flattr::Category on success and nil on failure
       def category(id)
         categories.select do |category|
           category.id == id
