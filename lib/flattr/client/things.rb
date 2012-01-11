@@ -23,18 +23,26 @@ module Flattr
 
       def thing_delete(id)
         thing = delete("/rest/v2/things/#{id}")
-        puts thing.inspect
-        true
+        if thing.nil? || thing == ""
+          return true
+        else
+          return false
+        end
       end
 
-      def search(params = {})
+      def thing_search(params = {})
         result = get("/rest/v2/things/search", params)
         Flattr::Search.new(result)
       end
 
-      def lookup(url)
-        thing = get("/rest/v2/things/lookup/", {:url => url})
-        Flattr::Thing.new(thing)
+      def thing_lookup(url)
+        lookup = get("/rest/v2/things/lookup", {:url => url})
+        if lookup["location"]
+          thing = get(lookup['location'])
+          Flattr::Thing.new(thing)
+        else
+          nil
+        end
       end
 
     end
