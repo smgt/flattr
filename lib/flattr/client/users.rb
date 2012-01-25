@@ -17,8 +17,11 @@ module Flattr
       # Returns a Flattr::User if successful
       # Raises a ERROR on failure
       def user(username=nil)
-        user = username || self.current_user.username
-        user = get("/rest/v2/users/#{user}")
+        if username.nil?
+          user = get("/rest/v2/user")
+        else
+          user = get("/rest/v2/users/#{username}")
+        end
         Flattr::User.new(user)
       end
 

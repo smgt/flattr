@@ -45,7 +45,7 @@ module Flattr
     #
     # @return [Flattr::User]
     def current_user
-      @current_user ||= Flattr::User.new(self.verify_credentials)
+      @current_user ||= self.user
     end
 
     def base64_encode str

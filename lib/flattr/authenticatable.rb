@@ -15,7 +15,13 @@ module Flattr
     #
     # @return [Boolean]
     def credentials?
-      !credentials[:access_token].nil?
+      if credentials[:access_token]
+        true
+      elsif credentials[:client_id] && credentials[:client_secret]
+        true
+      else
+        false
+      end
     end
   end
 end
