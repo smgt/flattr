@@ -10,7 +10,6 @@ module Flattr
     class RaiseClientError < Faraday::Response::Middleware
 
       def on_complete(env)
-        puts env[:body]
         case env[:status].to_i
         when 400
           raise Flattr::Error::BadRequest.new(error_body(env[:body]), env[:response_headers])
