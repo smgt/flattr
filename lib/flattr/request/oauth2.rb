@@ -17,7 +17,7 @@ module Flattr
         if @options[:access_token]
           "Bearer #{@options[:access_token]}"
         elsif @options[:client_id] && @options[:client_secret]
-          "Basic #{base64_encode("#{@options[:client_id]}:#{@options[:client_secret]}")}"
+          "Basic #{Flattr::Client.base64_encode("#{@options[:client_id]}:#{@options[:client_secret]}")}"
         else
           nil
         end

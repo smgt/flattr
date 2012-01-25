@@ -30,7 +30,7 @@ module Flattr
         :grant_type => 'authorization_code'
       },{
         :headers => {
-          :authorization => "Basic #{base64_encode("#{client_id}:#{client_secret}")}"
+          :authorization => "Basic #{Flattr::Client.base64_encode("#{client_id}:#{client_secret}")}"
         }}
       )
       self.access_token = response['access_token']
