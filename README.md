@@ -17,7 +17,7 @@ Installation is easy, just install the gem with.
 
 ## Usage
 
-To talk with all of Flattr API resources you need to [register a application](http://flattr.com/apps). This will give you a *client id* and a *client secret* whom you can exchange for a *access token*. The *access token* is then used to access the resources in the Flattr API that needs authentication. You can find more information about the API in [Flattr developer documents](http://developers.flattr.net/v2).
+To talk with all of Flattr API resources you need to [register a application](http://flattr.com/apps). This will give you a `client id` and a `client secret` whom you can exchange for a `access token`. The `access token` is then used to access the resources in the Flattr API that needs authentication. You can find more information about the API in [Flattr developer documents](http://developers.flattr.net/api).
 
 ### Resources
 
@@ -62,7 +62,9 @@ print 'code: '
 code = gets
 
 # Use the code and exchange it for a access_token
-flattr.get_access_token code
+access_token = flattr.get_access_token code
+
+puts access_token
 
 # You are now authorized! ;)
 
@@ -78,9 +80,8 @@ If you request a access token without any scopes you won't be able to flattr oth
 
 ## What needs to be done
 
-* Add error reporting
-* More tests are needed, coverage isn't that good
 * Add all the Flattr API resources
+* More tests are needed, coverage isn't that good
 
 ## Supported Ruby Versions
 
