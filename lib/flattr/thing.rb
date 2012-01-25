@@ -5,7 +5,7 @@ module Flattr
 
     lazy_attr_reader :resource, :link, :id, :url, :language, :category,
       :hidden, :flattred, :tags, :flattrs, :description, :title,
-      :last_flattr_at, :updated_at, :flattrs_current_period, :owner
+      :last_flattr_at, :updated_at, :owner,:image
 
     lazy_attr_writer :tags, :language, :category, :hidden, :description,
       :description, :title
