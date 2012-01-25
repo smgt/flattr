@@ -1,13 +1,8 @@
-# Flattr API wrapper
+# The Flattr Ruby Gem [![Build Status](https://secure.travis-ci.org/simon/flattr.png)](http://travis-ci.org/simon/flattr) [![Dependency Status](https://gemnasium.com/simon/flattr.png)](https://gemnasium.com/simon/flattr)
 
 This gem is a wrapper around the Flattr API. With the gem you can search things, add new thing and much more. If you want information about updates follow [@simongate](http://twitter.com/simongate) on twitter.
 
 [![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=smgt&url=https://github.com/simon/flattr&title=Flattr API gem&language=en_GB&tags=github&category=software)
-
-## Build status
-
-[![Build
-Status](https://secure.travis-ci.org/simon/flattr.png)](http://travis-ci.org/simon/flattr)
 
 ## Installation
 
@@ -17,8 +12,8 @@ Installation is easy, just install the gem with.
 
 ### Dependencies
 
-  * Faraday
-  * multi_json
+  * [Faraday](https://github.com/technoweenie/faraday)
+  * [multi_json](https://github.com/intridea/multi_json)
 
 ## Usage
 
