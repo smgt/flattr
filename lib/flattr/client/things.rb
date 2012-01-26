@@ -15,7 +15,7 @@ module Flattr
       #   #=> Flattr::Thing
       #
       # Returns the thing
-      # Raises error on failure
+      # Raises Flattr::Error::NotFound on error
       def thing(id)
         thing = get("/rest/v2/things/#{id}")
         Flattr::Thing.new(thing)
@@ -33,10 +33,11 @@ module Flattr
       #        :hidden - boolean toggling if thing should be hidden or not (optional).
       #
       # Returns new thing
-      # Raises error on failure
+      # Raises Flattr::Error::BadRequest on validation error
+      # Raises Flattr::Error::NotFound if thing was not found
       def thing_new(url, opts = {})
         response = post("/rest/v2/things", opts.merge(:url => url))
-        thing = get("/rest/v2/things/#{response[:id]}") 
+        thing = get("/rest/v2/things/#{response[:id]}")
         Flattr::Thing.new(thing)
       end
 
@@ -52,7 +53,8 @@ module Flattr
       #        :hidden - boolean toggling if thing should be hidden or not (optional).
       #
       # Returns updated thing
-      # Raises Error on failure
+      # Raises Flattr::Error::BadRequest on validation error
+      # Raises Flattr::Error::NotFound if thing was not found
       def thing_update(id, opts = {})
         patch("/rest/v2/things/#{id}", opts)
         thing = get("/rest/v2/things/#{id}")
@@ -70,7 +72,7 @@ module Flattr
       #   # => true
       #
       # Returns true if successful
-      # Raises Error on failure
+      # Raises Flattr::Error::NotFound if thing was not found
       def thing_delete(id)
         thing = delete("/rest/v2/things/#{id}")
         if thing.nil? || thing == ""
@@ -78,21 +80,6 @@ module Flattr
         else
           return false
         end
-      end
-
-      # Public: Flattr a thing
-      #
-      # id - id of the thing you want to flattr
-      #
-      # Example
-      #
-      #   f = Flattr.new
-      #   f.thing_flattr(1)
-      #   # => true
-      #
-      # Returns true
-      def thing_flattr(id)
-        post("/rest/v2/things/#{id}/flattr")
       end
 
       # Public: Search things

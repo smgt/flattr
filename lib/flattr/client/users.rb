@@ -15,7 +15,7 @@ module Flattr
       #   # => #<Flattr::User...
       #
       # Returns a Flattr::User if successful
-      # Raises a ERROR on failure
+      # Raises Flattr::Error::NotFound if user not found
       def user(username=nil)
         if username.nil?
           user = get("/rest/v2/user")
@@ -36,7 +36,7 @@ module Flattr
       #   # => [#<Flattr::Thing...
       #
       # Returns a Array with Flattr::User's inside if successful
-      # Raises a ERROR on failure
+      # Raises a Flattr::Error::NotFound if user not found
       def user_things(username=nil, args={})
         user = username || self.current_user.username
         get("/rest/v2/users/#{user}/things", args).map do |thing|
@@ -55,7 +55,7 @@ module Flattr
       #   # => [{"type" => "flattr"....
       #
       # Returns a Array with flattrs if successful
-      # Raises a ERROR on failure
+      # Raises Flattr::Error::NotFound if user not found
       def user_flattrs(username=nil, args={})
         user = username || self.current_user.username
         get("/rest/v2/users/#{user}/flattrs").map do |flattr|
