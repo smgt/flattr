@@ -5,8 +5,7 @@ module Flattr
 
       # Public: Flattr a thing
       #
-      # :id - id of the thing you wan't to flattr
-      # :url - URL of the thing you wan't to flattr
+      # thing  - The id or URL of the thing you wan't to flattr
       #
       # Examples
       #

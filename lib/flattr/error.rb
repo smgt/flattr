@@ -3,11 +3,12 @@ module Flattr
   class Error < StandardError
     attr_reader :http_headers
 
-    # Initializes a new Error object
+    # Private: Initializes a new Error object
     #
-    # @param message [String]
-    # @param http_headers [Hash]
-    # @return [Flattr::Error]
+    # message - Error message
+    # http_headers - Hash with http_headers
+    #
+    # Returns a Flattr::Error
     def initialize(message, http_headers)
       @http_headers = Hash[http_headers]
       super(message)
