@@ -23,6 +23,7 @@ To talk with all of Flattr API resources you need to [register a application](ht
 
 You can find documentation about available resources in the code.
 
+* [flattrs](https://github.com/simon/flattr/blob/master/lib/flattr/client/flattrs.rb)
 * [things](https://github.com/simon/flattr/blob/master/lib/flattr/client/things.rb)
 * [users](https://github.com/simon/flattr/blob/master/lib/flattr/client/users.rb)
 * [categories](https://github.com/simon/flattr/blob/master/lib/flattr/client/categories.rb)
