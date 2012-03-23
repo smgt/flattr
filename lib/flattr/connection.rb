@@ -21,10 +21,12 @@ module Flattr
       Faraday.new(default_options.deep_merge(connection_options)) do |builder|
         builder.use Faraday::Request::JSON
         builder.use Faraday::Request::UrlEncoded
+
         builder.use Flattr::Request::FlattrOAuth2, credentials if credentials?
         builder.use Flattr::Response::RaiseClientError
         builder.use Flattr::Response::ParseJson unless connection_options[:raw]
         builder.use Flattr::Response::RaiseServerError
+
         builder.adapter(adapter)
       end
     end

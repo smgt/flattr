@@ -14,7 +14,11 @@ module Flattr
         when 'false'
           false
         else
-          ::MultiJson.decode(body)
+          begin
+            ::MultiJson.decode(body)
+          rescue
+            nil
+          end
         end
       end
 
