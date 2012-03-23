@@ -37,7 +37,7 @@ module Flattr
       # Raises Flattr::Error::NotFound if thing was not found
       def thing_new(url, opts = {})
         response = post("/rest/v2/things", opts.merge(:url => url))
-        thing = get("/rest/v2/things/#{response[:id]}")
+        thing = thing(response["id"])
         Flattr::Thing.new(thing)
       end
 
@@ -132,6 +132,20 @@ module Flattr
         else
           nil
         end
+      end
+
+      # Public: Get flattrs on a thing
+      #
+      # id - id of thing
+      #
+      # Examples
+      #   
+      #   f = Flattr.new
+      #   f.thing_flattrs(450287)
+      #   # => [...]
+
+      def thing_flattrs(id,params={})
+        get("/rest/v2/things/#{id}/flattrs",params)
       end
 
     end
