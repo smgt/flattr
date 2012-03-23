@@ -4,8 +4,8 @@ module Flattr
     def authorize_url(opts = {})
 
       default_options = {
-        :client_id => client_id,
-        :client_secret => client_secret,
+        :client_id => client_id.strip,
+        :client_secret => client_secret.strip,
         :response_type => "code"
       }
 
@@ -26,7 +26,7 @@ module Flattr
 
     def get_access_token(code)
       response = post(token_endpoint, {
-        :code => code,
+        :code => code.strip,
         :grant_type => 'authorization_code'
       },{
         :headers => {
