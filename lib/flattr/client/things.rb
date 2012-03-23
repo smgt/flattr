@@ -21,6 +21,21 @@ module Flattr
         Flattr::Thing.new(thing)
       end
 
+      # Public: Fetch several things
+      #
+      # ids - a list of thing ids
+      #
+      # Examples
+      #
+      #   f = Flattr.new
+      #   f.things(450287,543896)
+      #   #=> [Flattr::Thing, Flattr::Thing]
+      #
+      # Returns a Array with things
+      def things(*ids)
+        get("/rest/v2/things/#{ids.join(",")}?full").collect { |t| Flattr::Thing.new(t) }
+      end
+
       # Public: Create a thing
       #
       # url - URL you want to submit
