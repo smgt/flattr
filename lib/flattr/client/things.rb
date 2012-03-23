@@ -17,7 +17,7 @@ module Flattr
       # Returns the thing
       # Raises Flattr::Error::NotFound on error
       def thing(id)
-        thing = get("/rest/v2/things/#{id}")
+        thing = get("/rest/v2/things/#{id}?full")
         Flattr::Thing.new(thing)
       end
 
@@ -105,6 +105,7 @@ module Flattr
       #
       # Returns Flattr::Search
       def thing_search(params = {})
+        params.merge!({"full" => "full"})
         result = get("/rest/v2/things/search", params)
         Flattr::Search.new(result)
       end
@@ -143,7 +144,8 @@ module Flattr
       #   f = Flattr.new
       #   f.thing_flattrs(450287)
       #   # => [...]
-
+      #
+      # Returns a Array with flattrs
       def thing_flattrs(id,params={})
         get("/rest/v2/things/#{id}/flattrs",params)
       end
