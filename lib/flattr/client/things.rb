@@ -53,7 +53,6 @@ module Flattr
       def thing_new(url, opts = {})
         response = post("/rest/v2/things", opts.merge(:url => url))
         thing = thing(response["id"])
-        Flattr::Thing.new(thing)
       end
 
       # Public: Update a thing
