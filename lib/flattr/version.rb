@@ -13,7 +13,7 @@ module Flattr
 
   # @return [Integer]
   def self.patch
-    2
+    3
   end
 
   # @return [String, NilClass]
