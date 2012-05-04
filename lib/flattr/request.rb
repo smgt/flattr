@@ -34,7 +34,7 @@ module Flattr
       response = connection(options).send(method) do |request|
         case method.to_sym
         when :get, :delete
-          request.url(path, MultiJson.dump(params))
+          request.url(path, params)
         when :post, :put, :patch
           request.path = path
           request.headers['Content-Type'] = 'application/json'
