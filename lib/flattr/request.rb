@@ -1,3 +1,5 @@
+require 'multi_json'
+
 module Flattr
   # Defines HTTP request methods
   module Request
@@ -32,11 +34,11 @@ module Flattr
       response = connection(options).send(method) do |request|
         case method.to_sym
         when :get, :delete
-          request.url(path, params)
+          request.url(path, MultiJson.dump(params))
         when :post, :put, :patch
           request.path = path
           request.headers['Content-Type'] = 'application/json'
-          request.body = params unless params.empty?
+          request.body = MultiJson.dump(params) unless params.empty?
         end
       end
       options[:raw] ? response : response.body
