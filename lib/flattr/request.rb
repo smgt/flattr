@@ -35,7 +35,7 @@ module Flattr
           request.url(path, params)
         when :post, :put, :patch
           request.path = path
-          req.headers['Content-Type'] = 'application/json'
+          request.headers['Content-Type'] = 'application/json'
           request.body = params unless params.empty?
         end
       end
