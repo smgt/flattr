@@ -1,4 +1,4 @@
-# The Flattr Ruby Gem [![Build Status](https://secure.travis-ci.org/simon/flattr.png)](http://travis-ci.org/simon/flattr) [![Dependency Status](https://gemnasium.com/simon/flattr.png)](https://gemnasium.com/simon/flattr)
+![Flattr gem](https://github.com/simon/flattr/blob/master/img/logo_medium.png) [![Build Status](https://secure.travis-ci.org/simon/flattr.png)](http://travis-ci.org/simon/flattr) [![Dependency Status](https://gemnasium.com/simon/flattr.png)](https://gemnasium.com/simon/flattr)
 
 This gem is a wrapper around the Flattr API. With the gem you can search things, add new thing and much more. If you want information about updates follow [@simongate](http://twitter.com/simongate) on twitter.
 
