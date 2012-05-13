@@ -78,6 +78,7 @@ If you request a access token without any scopes you won't be able to flattr oth
 * `thing` - Create and update things
 * `flattr` - Flattr things
 * `extendedread` - Access all the information about users
+* `email` - Read the current users e-mail address
 
 ## What needs to be done
 
