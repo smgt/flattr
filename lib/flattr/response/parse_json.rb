@@ -15,7 +15,7 @@ module Flattr
           false
         else
           begin
-            ::MultiJson.decode(body)
+            ::MultiJson.load(body)
           rescue
             nil
           end
