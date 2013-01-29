@@ -2,6 +2,7 @@ source "http://rubygems.org"
 
 gem 'rake'
 gem 'yard'
+gem 'system_timer', :platforms => :ruby_18
 
 group :development do
   gem 'guard'
@@ -16,6 +17,5 @@ group :test do
   gem 'simplecov'
   gem 'webmock'
 end
-  
-# Specify your gem's dependencies in flattr.gemspec
+
 gemspec
