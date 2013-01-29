@@ -1,6 +1,7 @@
 require 'helper'
 
 describe Flattr do
+
   after do
     Flattr.reset
   end
