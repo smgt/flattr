@@ -1,9 +1,9 @@
 ![Flattr gem](https://github.com/smgt/flattr/raw/master/img/logo_medium.png)   
-[![Gem Version](https://badge.fury.io/rb/flattr.png)](http://badge.fury.io/rb/flattr) [![Build Status](https://secure.travis-ci.org/simon/flattr.png)](http://travis-ci.org/simon/flattr) [![Dependency Status](https://gemnasium.com/smgt/flattr.png)](https://gemnasium.com/smgt/flattr) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/smgt/flattr)
+[![Gem Version](https://badge.fury.io/rb/flattr.png)](http://badge.fury.io/rb/flattr) [![Build Status](https://secure.travis-ci.org/smgt/flattr.png)](http://travis-ci.org/smgt/flattr) [![Dependency Status](https://gemnasium.com/smgt/flattr.png)](https://gemnasium.com/smgt/flattr) [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/smgt/flattr)
 
 This gem is a wrapper around the Flattr API. With the gem you can search things, add new thing and much more. If you want information about updates follow [@simongate](http://twitter.com/simongate) on twitter.
 
-[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=smgt&url=https://github.com/simon/flattr&title=Flattr API gem&language=en_GB&tags=github&category=software)
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=smgt&url=https://github.com/smgt/flattr&title=Flattr API gem&language=en_GB&tags=github&category=software)
 
 ## Installation
 
@@ -24,11 +24,11 @@ To talk with all of Flattr API resources you need to [register a application](ht
 
 You can find documentation about available resources in the code.
 
-* [flattrs](https://github.com/simon/flattr/blob/master/lib/flattr/client/flattrs.rb)
-* [things](https://github.com/simon/flattr/blob/master/lib/flattr/client/things.rb)
-* [users](https://github.com/simon/flattr/blob/master/lib/flattr/client/users.rb)
-* [categories](https://github.com/simon/flattr/blob/master/lib/flattr/client/categories.rb)
-* [languages](https://github.com/simon/flattr/blob/master/lib/flattr/client/languages.rb)
+* [flattrs](https://github.com/smgt/flattr/blob/master/lib/flattr/client/flattrs.rb)
+* [things](https://github.com/smgt/flattr/blob/master/lib/flattr/client/things.rb)
+* [users](https://github.com/smgt/flattr/blob/master/lib/flattr/client/users.rb)
+* [categories](https://github.com/smgt/flattr/blob/master/lib/flattr/client/categories.rb)
+* [languages](https://github.com/smgt/flattr/blob/master/lib/flattr/client/languages.rb)
 
 ### Access public resources
 
@@ -88,11 +88,12 @@ If you request a access token without any scopes you won't be able to flattr oth
 
 ## Supported Ruby Versions
 
-This library aims to support and is [tested against](http://travis-ci.org/simon/flattr) the following Ruby implementations:
+This library aims to support and is [tested against](http://travis-ci.org/smgt/flattr) the following Ruby implementations:
 
 * Ruby 1.8.7
 * Ruby 1.9.2
 * Ruby 1.9.3
+* Ruby 2.0.0
 * JRuby
 * Rubinius
 * Ruby Enterprise Edition
