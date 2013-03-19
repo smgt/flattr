@@ -16,6 +16,7 @@ module Flattr
     require 'flattr/client/things'
     require 'flattr/client/languages'
     require 'flattr/client/categories'
+    require 'flattr/client/subscriptions'
     require 'flattr/client/flattrs'
 
     include Flattr::Connection
@@ -28,6 +29,7 @@ module Flattr
     include Flattr::Client::Things
     include Flattr::Client::Languages
     include Flattr::Client::Categories
+    include Flattr::Client::Subscriptions
     include Flattr::Client::Flattrs
 
     attr_accessor *Config::VALID_OPTIONS_KEYS
