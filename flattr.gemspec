@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency 'faraday', '~> 0.7'
-  s.add_dependency 'multi_json', '~> 1.5.0'
+  s.add_dependency 'multi_json', '~> 1.7.0'
 end

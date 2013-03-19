@@ -1,10 +1,9 @@
 source "http://rubygems.org"
 
-gem 'rake'
-gem 'yard'
 gem 'system_timer', :platforms => :ruby_18
 
 group :development do
+  gem 'rake'
   gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard'
   gem 'guard-rspec'
@@ -17,6 +16,7 @@ group :test do
   gem 'kramdown'
   gem 'simplecov'
   gem 'webmock'
+  gem 'yard'
 end
 
 gemspec
