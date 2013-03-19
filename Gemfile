@@ -5,6 +5,7 @@ gem 'yard'
 gem 'system_timer', :platforms => :ruby_18
 
 group :development do
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard'
   gem 'guard-rspec'
   gem 'growl'
