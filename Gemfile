@@ -2,8 +2,11 @@ source "http://rubygems.org"
 
 gem 'system_timer', :platforms => :ruby_18
 
-group :development do
+group :development, :test do
   gem 'rake'
+end
+
+group :development do
   gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
   gem 'guard'
   gem 'guard-rspec'
