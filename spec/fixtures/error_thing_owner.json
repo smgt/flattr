@@ -1,0 +1,5 @@
+{
+  "error": "thing_owner",
+  "error_description": "You are not allowed to subscribe to your own thing",
+  "error_uri": "http://developers.flattr.net/api/resources/subscriptions/"
+}
