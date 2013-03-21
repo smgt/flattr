@@ -1,6 +1,7 @@
 source "http://rubygems.org"
 
 gem 'system_timer', :platforms => :ruby_18
+gem "yajl-ruby"
 
 group :development, :test do
   gem 'rake'
