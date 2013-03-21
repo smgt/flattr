@@ -65,6 +65,7 @@ PLATFORMS
 DEPENDENCIES
   flattr!
   growl
+  gson
   guard
   guard-rspec
   json

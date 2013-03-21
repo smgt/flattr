@@ -1,7 +1,8 @@
 source "http://rubygems.org"
 
 gem 'system_timer', :platforms => :ruby_18
-gem "yajl-ruby"
+gem "yajl-ruby", :platforms => :ruby
+gem "gson", :platforms => :jruby
 
 group :development, :test do
   gem 'rake'
