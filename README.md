@@ -1,3 +1,5 @@
+# NOTE: :loudspeaker: Flattr have discontinued their REST API and therefore this gem will not work anymore!
+
 ![Flattr gem](https://github.com/smgt/flattr/raw/master/img/logo_medium.png)   
 [![Gem Version](https://badge.fury.io/rb/flattr.png)](http://badge.fury.io/rb/flattr) [![Build Status](https://secure.travis-ci.org/smgt/flattr.png)](http://travis-ci.org/smgt/flattr) [![Dependency Status](https://gemnasium.com/smgt/flattr.png)](https://gemnasium.com/smgt/flattr) [![Code Climate](https://codeclimate.com/github/smgt/flattr.png)](https://codeclimate.com/github/smgt/flattr)
 
